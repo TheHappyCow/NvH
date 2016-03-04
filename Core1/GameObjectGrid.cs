@@ -1,21 +1,69 @@
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 using System;
 
-namespace NvH_Core
+public class GameObjectGrid : GameObject
 {
-#if WINDOWS || XBOX
-    static class GameObjectGrid
+    protected GameObject[,] grid;
+    public int cellWidth, cellHeight, columns, rows;
+
+    public GameObjectGrid(int columns, int rows, int cellWidth, int cellHeight, string id = "")
+        : base(id)
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        static void Main(string[] args)
+        grid = new GameObject[columns, rows];
+        for (int x = 0; x < columns; x++)
+            for (int y = 0; y < rows; y++)
+                grid[x, y] = null;
+
+        this.columns = columns;
+        this.rows = rows;
+        this.cellWidth = cellWidth;
+        this.cellHeight = cellHeight;
+    }
+
+    public GameObject[,] Objects
+    {
+        get
         {
-            using (GameObject game = new GameObject())
-            {
-                game.Run();
-            }
+            return grid;
         }
     }
-#endif
+
+    public int Columns
+    {
+        get { return grid.GetLength(0); }
+    }
+
+    public int Rows
+    {
+        get { return grid.GetLength(1); }
+    }
+
+    public int CellWidth
+    {
+        get { return cellWidth; }
+        set { cellWidth = value; }
+    }
+
+    public int CellHeight
+    {
+        get { return cellHeight; }
+        set { cellHeight = value; }
+    }
+
+    public override void HandleInput(InputHelper inputHelper)
+    {
+        foreach (GameObject obj in grid)
+            obj.HandleInput(inputHelper);
+    }
+
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
+    {
+        foreach (GameObject obj in grid)
+            obj.Draw(gameTime, spriteBatch, cameraPosition);
+    }
 }
+
+
+
 

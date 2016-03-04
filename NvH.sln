@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NvH_Core", "NvH Core\NvH_Core\NvH_Core.csproj", "{FF2F0BA3-D149-438F-BC68-B0CB0492CA4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "Main\Main\Main.csproj", "{8A39B74E-0860-467E-940C-799F7018EC0E}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "NvH_CoreContent", "NvH Core\NvH_CoreContent\NvH_CoreContent.contentproj", "{ABA3335B-1F7C-4C22-844B-C747C38C2386}"
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "MainContent", "Main\MainContent\MainContent.contentproj", "{639C9DE2-85F3-40CF-B535-895E6A362AE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core1\Core.csproj", "{B761F7CD-AD71-4473-959A-B2723C6C3AD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,12 +15,16 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF2F0BA3-D149-438F-BC68-B0CB0492CA4B}.Debug|x86.ActiveCfg = Debug|x86
-		{FF2F0BA3-D149-438F-BC68-B0CB0492CA4B}.Debug|x86.Build.0 = Debug|x86
-		{FF2F0BA3-D149-438F-BC68-B0CB0492CA4B}.Release|x86.ActiveCfg = Release|x86
-		{FF2F0BA3-D149-438F-BC68-B0CB0492CA4B}.Release|x86.Build.0 = Release|x86
-		{ABA3335B-1F7C-4C22-844B-C747C38C2386}.Debug|x86.ActiveCfg = Debug|x86
-		{ABA3335B-1F7C-4C22-844B-C747C38C2386}.Release|x86.ActiveCfg = Release|x86
+		{8A39B74E-0860-467E-940C-799F7018EC0E}.Debug|x86.ActiveCfg = Debug|x86
+		{8A39B74E-0860-467E-940C-799F7018EC0E}.Debug|x86.Build.0 = Debug|x86
+		{8A39B74E-0860-467E-940C-799F7018EC0E}.Release|x86.ActiveCfg = Release|x86
+		{8A39B74E-0860-467E-940C-799F7018EC0E}.Release|x86.Build.0 = Release|x86
+		{639C9DE2-85F3-40CF-B535-895E6A362AE7}.Debug|x86.ActiveCfg = Debug|x86
+		{639C9DE2-85F3-40CF-B535-895E6A362AE7}.Release|x86.ActiveCfg = Release|x86
+		{B761F7CD-AD71-4473-959A-B2723C6C3AD2}.Debug|x86.ActiveCfg = Debug|x86
+		{B761F7CD-AD71-4473-959A-B2723C6C3AD2}.Debug|x86.Build.0 = Debug|x86
+		{B761F7CD-AD71-4473-959A-B2723C6C3AD2}.Release|x86.ActiveCfg = Release|x86
+		{B761F7CD-AD71-4473-959A-B2723C6C3AD2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

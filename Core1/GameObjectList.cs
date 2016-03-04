@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
 
-class GameObjectList : GameObject
+public class GameObjectList : GameObject
 {
     List<GameObject> objects;
 

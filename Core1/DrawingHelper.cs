@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
-namespace NvH_Core
+public class DrawingHelper
 {
-    class DrawingHelper
+    protected static Texture2D pixel;
+
+    public static void Initialize(GraphicsDevice graphics)
     {
+        pixel = new Texture2D(graphics, 1, 1);
+        pixel.SetData(new[] { Color.White });
     }
 }

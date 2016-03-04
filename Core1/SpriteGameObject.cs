@@ -1,11 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 
-namespace NvH_Core
+public class SpriteGameObject : GameObject
 {
-    class SpriteGameObject
+    protected Vector2 origin;
+    protected SpriteSheet spriteSheet;
+
+    public SpriteGameObject(string assetname, int sheetIndex = 0, string id = "")
     {
+        if (assetname != "")
+            spriteSheet = new SpriteSheet(assetname, sheetIndex);          
+    }
+
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
+    {
+        if (spriteSheet == null)
+            return;
+        spriteSheet.Draw(spriteBatch, Position, origin);
+    }
+
+    public SpriteSheet SpriteSheet
+    {
+        get { return spriteSheet; }
+    }
+
+    public int Width
+    {
+        get { return spriteSheet.Width; }
+    }
+
+    public int Height
+    {
+        get { return spriteSheet.Height; }
+    }
+
+    public Vector2 Origin
+    {
+        get { return this.origin; }
+        set { this.origin = value; }
     }
 }
