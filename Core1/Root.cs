@@ -7,5 +7,5 @@ public interface Root
 
     void Update(GameTime gameTime);
 
-    void Draw(GameTime gameTime, SpriteBatch spriteBatch);
+    void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition);
 }

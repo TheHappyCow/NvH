@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-public class GameStateManager : Root
+public class GameStateManager
 {
     Dictionary<string, Root> gameState;
     Root currentGameState;
@@ -48,6 +48,6 @@ public class GameStateManager : Root
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         if (currentGameState != null)
-            currentGameState.Draw(gameTime, spriteBatch);
+            currentGameState.Draw(gameTime, spriteBatch, Vector2.Zero);
     }
 }

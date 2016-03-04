@@ -4,13 +4,25 @@ using System.Collections.Generic;
 class HexaGrid : GameObjectGrid
 {
     bool startLeft;
+    float offsetX;
 
     public HexaGrid(int columns, int rows, int cellWidth, int cellHeight, bool startLeft = true, string id = "") : base(columns, rows, cellWidth, cellHeight, id)
     {
         this.startLeft = startLeft;
-        
+        offsetX = GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Width * .75f;
     }
-    
+
+    public override void Add(GameObject obj, int x, int y)
+    {
+        grid[x, y] = obj;
+        obj.Parent = this;
+        if((startLeft && y % 2 == 0) || (!startLeft && y % 2 == 1))
+            obj.Position = new Vector2((x * 1.5f) * cellWidth + offsetX, y * cellHeight / 2);
+        else
+            obj.Position = new Vector2((x * 1.5f) * cellWidth, y * cellHeight / 2);
+
+    }
+
     // Top Left Neighbour Tile
     public Tile TLNeighbourTile(Point tilePosition)
     {

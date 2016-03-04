@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
-
+using System;
 
 public class GameObjectList : GameObject
 {
@@ -26,5 +26,10 @@ public class GameObjectList : GameObject
         {
             obj.Draw(gameTime, spriteBatch, cameraPosition);
         }
+    }
+
+    public List<GameObject> Objects
+    {
+        get { return objects; }
     }
 }

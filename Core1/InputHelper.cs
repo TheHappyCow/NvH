@@ -21,7 +21,7 @@ public class InputHelper
 
     public Vector2 MousePosition
     {
-        get { return new Vector2(currentMouseState.X, currentMouseState.Y) / scale; }
+        get { return new Vector2(currentMouseState.X, currentMouseState.Y); }
     }
 
     public bool MouseLeftButtonPressed()
