@@ -19,6 +19,11 @@ public class InputHelper
         currentKeyboardState = Keyboard.GetState();
     }
 
+    public bool MouseInBox(Rectangle box)
+    {
+        return box.Contains(new Point((int)MousePosition.X, (int)MousePosition.Y));
+    }
+
     public Vector2 MousePosition
     {
         get { return new Vector2(currentMouseState.X, currentMouseState.Y); }

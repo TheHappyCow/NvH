@@ -40,4 +40,15 @@ public class SpriteGameObject : GameObject
         get { return this.origin; }
         set { this.origin = value; }
     }
+
+    //Returns the boundingbox of the sprite.
+    public Rectangle BoundingBox
+    {
+        get
+        {
+            int left = (int)(Position.X - origin.X);
+            int top = (int)(Position.Y - origin.Y);
+            return new Rectangle(left, top, Width, Height);
+        }
+    }
 }

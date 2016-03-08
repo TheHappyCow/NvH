@@ -9,6 +9,7 @@ public class SpriteSheet
     protected int sheetColumns;
     protected int sheetRows;
     protected bool mirror;
+    protected float scale;
 
     public SpriteSheet(string assetname = "", int sheetIndex = 0)
     {
@@ -16,6 +17,7 @@ public class SpriteSheet
         this.sheetIndex = sheetIndex;
         this.sheetColumns = 1;
         this.sheetRows = 1;
+        scale = 1.0f;
 
         //extract number of sheet elements from the assetname
         string[] assetSplit = assetname.Split('@');
@@ -36,7 +38,13 @@ public class SpriteSheet
         Rectangle spritePart = new Rectangle(columnIndex * this.Width, rowIndex * this.Height, this.Width, this.Height);
         SpriteEffects spriteEffects = SpriteEffects.None;
 
-        spriteBatch.Draw(sprite, position, spritePart, Color.White, 0.0f, origin, 1.0f, spriteEffects, 0.0f);
+        spriteBatch.Draw(sprite, position, spritePart, Color.White, 0.0f, origin, scale, spriteEffects, 0.0f);
+    }
+
+    public float Scale
+    {
+        get { return scale; }
+        set { scale = value; }
     }
 
     public Texture2D Sprite
@@ -52,6 +60,12 @@ public class SpriteSheet
     public int Height
     {
         get { return sprite.Height / sheetRows; }
+    }
+
+    public int SheetIndex
+    {
+        get { return sheetIndex; }
+        set { sheetIndex = value; }
     }
 }
 
