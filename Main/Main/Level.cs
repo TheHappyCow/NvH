@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 class Level : GameObjectList
 {
     HexaGrid levelGrid;
-
+    Camera camera;
     protected Faction faction;
 
     public enum Faction
@@ -23,4 +23,9 @@ class Level : GameObjectList
             for(int j = 0; j < 10; j++)
                 levelGrid.Add(new Tile("Hexagon Tile", "tile"), i, j);
         Objects.Add(levelGrid);
+        camera = new Camera("camera");
+        Objects.Add(camera);
+    }    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
+    {
+        base.Draw(gameTime, spriteBatch, camera.Position);
     }}

@@ -17,7 +17,7 @@ public class SpriteGameObject : GameObject
     {
         if (spriteSheet == null)
             return;
-        spriteSheet.Draw(spriteBatch, Position, origin);
+        spriteSheet.Draw(spriteBatch, Position, cameraPosition);
     }
 
     public SpriteSheet SpriteSheet

@@ -12,6 +12,14 @@ public class GameObjectList : GameObject
         objects = new List<GameObject>();
     }
 
+    public override void HandleInput(InputHelper inputHelper)
+    {
+        foreach (GameObject obj in objects)
+        {
+            obj.HandleInput(inputHelper);
+        }
+    }
+
     public override void Update(GameTime gameTime)
     {
         foreach(GameObject obj in objects)
