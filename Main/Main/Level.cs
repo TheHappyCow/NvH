@@ -18,9 +18,9 @@ class Level : GameObjectList
     public Level(Faction faction) : base("level")
     {
         this.faction = faction;
-        levelGrid = new HexaGrid(10, 10, GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Width, GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Height, true, "levelGrid");
+        levelGrid = new HexaGrid(10, 40, GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Width, GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Height, true, "levelGrid");
         for(int i = 0; i < 10; i++)
-            for(int j = 0; j < 10; j++)
+            for(int j = 0; j < 40; j++)
                 levelGrid.Add(new Tile("Hexagon Tile", "tile"), i, j);
         Objects.Add(levelGrid);
         camera = new Camera("camera");

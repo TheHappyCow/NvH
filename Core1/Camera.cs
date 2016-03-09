@@ -9,6 +9,8 @@ public class Camera : GameObject
     private int dx, dy;
     private const int step = 500;
 
+    public int borderWidth = 100;
+
     public Camera(string id) : base(id) { }
 
     public override void HandleInput(InputHelper inputHelper)
@@ -16,16 +18,19 @@ public class Camera : GameObject
         dx = 0;
         dy = 0;
 
-        if (inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Left))
+        float mouseX = inputHelper.MousePosition.X;
+        float mouseY = inputHelper.MousePosition.Y;
+
+        if (mouseX < borderWidth || inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Left))
             dx -= step;
 
-        if (inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Right))
+        if (mouseX > GameEnvironment.Screen.X - borderWidth || inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Right))
             dx += step;
 
-        if (inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Up))
+        if (mouseY < borderWidth || inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Up))
             dy -= step;
 
-        if (inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Down))
+        if (mouseY > GameEnvironment.Screen.Y - borderWidth || inputHelper.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Down))
             dy += step;
     }
 
