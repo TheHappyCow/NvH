@@ -23,7 +23,7 @@ class Level : GameObjectList
             for(int j = 0; j < 40; j++)
                 levelGrid.Add(new Tile("Hexagon Tile", "tile"), i, j);
         Objects.Add(levelGrid);
-        camera = new Camera("camera");
+        camera = new Camera("camera", new Rectangle(0, 0, levelGrid.GetWidth(), levelGrid.GetHeight()));
         Objects.Add(camera);
     }    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
     {

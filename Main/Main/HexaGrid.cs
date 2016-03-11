@@ -160,4 +160,14 @@ class HexaGrid : GameObjectGrid
         }
 
     }
+
+    public int GetWidth()
+    {
+        return (int)(columns * cellWidth * 1.5 + cellWidth * .25);
+    }
+
+    public int GetHeight()
+    {
+        return (int)((rows + 1) * cellHeight * .5);
+    }
 }
