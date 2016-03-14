@@ -8,6 +8,7 @@ class Level : GameObjectList
     HexaGrid levelGrid;
     Camera camera;
     protected Faction faction;
+    Cursor cursor;
 
     public enum Faction
     {
@@ -22,10 +23,15 @@ class Level : GameObjectList
         for(int i = 0; i < 10; i++)
             for(int j = 0; j < 40; j++)
                 levelGrid.Add(new Tile("Hexagon Tile", "tile"), i, j);
-        Objects.Add(levelGrid);
+        GameData.LevelObjects.Add(levelGrid);
         camera = new Camera("camera", new Rectangle(0, 0, levelGrid.GetWidth(), levelGrid.GetHeight()));
-        Objects.Add(camera);
-    }    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
+        GameData.LevelObjects.Add(camera);
+        cursor = new Cursor();
+        GameData.LevelObjects.Add(cursor);
+    }
+
+    public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
     {
         base.Draw(gameTime, spriteBatch, camera.Position);
-    }}
+    }
+}

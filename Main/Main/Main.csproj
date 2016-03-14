@@ -74,6 +74,8 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cursor.cs" />
+    <Compile Include="GameData.cs" />
     <Compile Include="HexaGrid.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="PlayingState.cs" />

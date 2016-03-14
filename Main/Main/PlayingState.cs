@@ -11,23 +11,28 @@ class PlayingState : Root
 
     public PlayingState()
     {
+        Initialize();
         level = new Level(Level.Faction.humanity);
+    }
+    public void Initialize()
+    {
+        GameData.Initialize();
     }
 
     public void HandleInput(InputHelper inputHelper)
     {
-        level.HandleInput(inputHelper);
+        GameData.LevelObjects.HandleInput(inputHelper);
     }
 
     public void Update(GameTime gameTime)
     {
-        level.Update(gameTime);
+        GameData.Update(gameTime);
     }
 
     public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
     {
         spriteBatch.Begin();
-        level.Draw(gameTime, spriteBatch, cameraPosition);
+        GameData.DrawGame(gameTime, spriteBatch, cameraPosition);
         spriteBatch.End();
     }
 }
