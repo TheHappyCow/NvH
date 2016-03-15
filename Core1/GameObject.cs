@@ -6,26 +6,14 @@ public class GameObject : Root
     protected GameObject parent;
     protected Vector2 velocity;
     protected Vector2 position;
+    protected int layer;
     protected string id;
 
-    public GameObject(string id = "")
+    public int Layer
     {
-        this.velocity = Vector2.Zero;
-        this.id = id;
+        get { return layer; }
+        set { layer = value; }
     }
-
-    public virtual void HandleInput(InputHelper inputHelper)
-    {
-    }
-
-    public virtual void Update(GameTime gameTime)
-    {
-    }
-
-    public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
-    {
-    }
-
     public virtual Vector2 Position
     {
         get { return position; }
@@ -47,5 +35,24 @@ public class GameObject : Root
     {
         get { return parent; }
         set { parent = value; }
+    }
+
+    public GameObject(string id = "", int layer = 0)
+    {
+        this.velocity = Vector2.Zero;
+        this.id = id;
+        this.layer = layer;
+    }
+
+    public virtual void HandleInput(InputHelper inputHelper)
+    {
+    }
+
+    public virtual void Update(GameTime gameTime)
+    {
+    }
+
+    public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
+    {
     }
 }

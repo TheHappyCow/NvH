@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 class Cursor:SpriteGameObject
     {
-    public Cursor() : base("CursorDot", 0, "cursor")
+    public Cursor() : base("CursorDot", 0, "cursor",5)
     {
     }
     public override void HandleInput(InputHelper inputHelper)
