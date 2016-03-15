@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework;
 class Level : GameObjectList
 {
     HexaGrid levelGrid;
-    Camera camera;
     protected Faction faction;
     Cursor cursor;
 
@@ -24,14 +23,14 @@ class Level : GameObjectList
             for(int j = 0; j < 40; j++)
                 levelGrid.Add(new Tile("Hexagon Tile", "tile"), i, j);
         GameData.LevelObjects.Add(levelGrid);
-        camera = new Camera("camera", new Rectangle(0, 0, levelGrid.GetWidth(), levelGrid.GetHeight()));
-        GameData.LevelObjects.Add(camera);
+        GameData.Camera = new Camera("camera", new Rectangle(0, 0, levelGrid.GetWidth(), levelGrid.GetHeight()));
+        GameData.LevelObjects.Add(GameData.Camera);
         cursor = new Cursor();
         GameData.LevelObjects.Add(cursor);
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
     {
-        base.Draw(gameTime, spriteBatch, camera.Position);
+        base.Draw(gameTime, spriteBatch, cameraPosition);
     }
 }

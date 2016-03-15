@@ -23,6 +23,11 @@ class HexaGrid : GameObjectGrid
 
     }
 
+    public Tile GetTile(Point p)
+    {
+        return null;
+    }
+
     // Top Left Neighbour Tile
     public Tile TLNeighbourTile(Point tilePosition)
     {
