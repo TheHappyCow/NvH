@@ -12,6 +12,7 @@ static class GameData
     //This is the list with all the objects of the current level in it.
     static public GameObjectList LevelObjects;
     static public Cursor cursor;
+    static public GameObject selectedTile;
     static public void Update(GameTime gameTime)
     {
         LevelObjects.Update(gameTime);
@@ -28,6 +29,8 @@ static class GameData
         LevelObjects = new GameObjectList("levelObjects");
         cursor = new Cursor();
         GameData.LevelObjects.Add(cursor);
+        selectedTile = new SpriteGameObject("Hexagon Selected Tile", 0, "selectedTile", 1);
+        GameData.LevelObjects.Add(selectedTile);
     }
     static public void AfterInitialize()
     {
