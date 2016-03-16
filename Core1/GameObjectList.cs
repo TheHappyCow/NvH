@@ -39,7 +39,7 @@ public class GameObjectList : GameObject
     public void Add(GameObject obj)
     {
         obj.Parent = this;
-     /*   for (int i = 0; i < gameObjects.Count; i++)
+        for (int i = 0; i < gameObjects.Count; i++)
         {
             if (gameObjects[i].Layer > obj.Layer)
             {
@@ -47,7 +47,7 @@ public class GameObjectList : GameObject
                 return;
             }
         }
-        */
+        
         gameObjects.Add(obj);
     }
 

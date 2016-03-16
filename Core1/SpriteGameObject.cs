@@ -7,7 +7,7 @@ public class SpriteGameObject : GameObject
     protected Vector2 origin;
     protected SpriteSheet spriteSheet;
 
-    public SpriteGameObject(string assetname, int sheetIndex = 0, string id = "")
+    public SpriteGameObject(string assetname, int sheetIndex = 0, string id = "",int layer =0):base(id,layer)
     {
         if (assetname != "")
             spriteSheet = new SpriteSheet(assetname, sheetIndex);          

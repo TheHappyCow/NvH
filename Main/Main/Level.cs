@@ -24,8 +24,6 @@ class Level : GameObjectList
         GameData.LevelObjects.Add(GameData.LevelGrid);
         GameData.Camera = new Camera("camera", new Rectangle(0, 0, GameData.LevelGrid.GetWidth(), GameData.LevelGrid.GetHeight()));
         GameData.LevelObjects.Add(GameData.Camera);
-        cursor = new Cursor();
-        GameData.LevelObjects.Add(cursor);
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)

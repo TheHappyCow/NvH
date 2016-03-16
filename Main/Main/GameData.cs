@@ -11,6 +11,7 @@ static class GameData
     static public HexaGrid LevelGrid;
     //This is the list with all the objects of the current level in it.
     static public GameObjectList LevelObjects;
+    static public Cursor cursor;
     static public void Update(GameTime gameTime)
     {
         LevelObjects.Update(gameTime);
@@ -20,10 +21,17 @@ static class GameData
     {
         LevelObjects.Draw(gameTime, spriteBatch, Camera.Position);
     }
+
     //Method that initializes the settings and data used in GameData.
     static public void Initialize()
     {
         LevelObjects = new GameObjectList("levelObjects");
+        cursor = new Cursor();
+        GameData.LevelObjects.Add(cursor);
+    }
+    static public void AfterInitialize()
+    {
+
     }
 }
 

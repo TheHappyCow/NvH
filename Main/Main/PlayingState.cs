@@ -11,6 +11,7 @@ class PlayingState : Root
 
     public PlayingState()
     {
+        //Later nog veranderen dat Initialize pas gebeurd als er daadwerkelijk een game wordt gemaakt (in titlemenu state)
         Initialize();
         level = new Level(Level.Faction.humanity);
     }
