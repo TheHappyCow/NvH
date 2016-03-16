@@ -8,6 +8,7 @@ using System.Text;
 static class GameData
 {
     static public GameObject Camera;
+    static public HexaGrid LevelGrid;
     //This is the list with all the objects of the current level in it.
     static public GameObjectList LevelObjects;
     static public void Update(GameTime gameTime)

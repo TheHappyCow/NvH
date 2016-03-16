@@ -4,12 +4,13 @@ using System.Collections.Generic;
 class HexaGrid : GameObjectGrid
 {
     bool startLeft;
-    float offsetX;
+    int offsetX, offsetY;
 
     public HexaGrid(int columns, int rows, int cellWidth, int cellHeight, bool startLeft = true, string id = "") : base(columns, rows, cellWidth, cellHeight, id)
     {
         this.startLeft = startLeft;
-        offsetX = GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Width * .75f;
+        offsetX = (int)(GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Width * .75f);
+        offsetY = (int)(GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Height * .5f);
     }
 
     public override void Add(GameObject obj, int x, int y)
@@ -23,9 +24,49 @@ class HexaGrid : GameObjectGrid
 
     }
 
+    /// <summary>
+    /// Gets the tile that contains a given point on the map
+    /// </summary>
+    /// <param name="p">The point on the map</param>
+    /// <returns>The corresponding tile</returns>
     public Tile GetTile(Point p)
     {
-        return null;
+        int col = p.X / offsetX;
+        int colOffset = p.X % offsetX;
+        
+        int x = col / 2;
+        int y = 0;
+        if (col % 2 == 0)
+            y = ((p.Y + offsetY) / cellHeight) * 2 - 1;
+        else
+            y = (p.Y / cellHeight) * 2;
+
+        if (colOffset < cellWidth / 4)
+        {
+            int row = p.Y / offsetY;
+            int rowOffset = p.Y % offsetY;
+            int dx = (col + 1) % 2;
+            if ((row + (col % 2)) % 2 == 0)
+            {
+                if (rowOffset > colOffset)
+                {
+                    x -= dx;
+                    y++;
+                }
+            }
+            else {
+                if (rowOffset + colOffset < offsetY)
+                {
+                    x -= dx;
+                    y--;
+                }
+            }
+        }
+
+        if (x >= 0 && x < columns && y >= 0 && y < rows)
+            return (Tile)grid[x, y];
+        else
+            return null;
     }
 
     // Top Left Neighbour Tile
