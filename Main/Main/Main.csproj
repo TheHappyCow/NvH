@@ -81,6 +81,7 @@
     <Compile Include="PlayingState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MainGame.cs" />
+    <Compile Include="ResourceController.cs" />
     <Compile Include="Tile.cs" />
   </ItemGroup>
   <ItemGroup>
