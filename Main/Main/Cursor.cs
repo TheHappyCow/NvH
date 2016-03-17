@@ -24,5 +24,13 @@ class Cursor : SpriteGameObject
         //}
 
     }
+
+    public override void Draw(GameTime gameTime, Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Vector2 cameraPosition)
+    {
+
+        if (spriteSheet == null)
+            return;
+        spriteSheet.Draw(spriteBatch, Position, new Vector2(0,0));
+    }
 }
 
