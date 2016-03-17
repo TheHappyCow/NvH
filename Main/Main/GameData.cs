@@ -26,7 +26,15 @@ static class GameData
     //Method that initializes the settings and data used in GameData.
     static public void Initialize()
     {
+
         LevelObjects = new GameObjectList("levelObjects");
+        GameData.LevelGrid = new HexaGrid(10, 40, GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Width, GameEnvironment.AssetManager.GetSprite("Hexagon Tile").Height, true, "levelGrid");
+        for (int i = 0; i < 10; i++)
+            for (int j = 0; j < 40; j++)
+                GameData.LevelGrid.Add(new Tile("Hexagon Tile", "tile"), i, j);
+        GameData.LevelObjects.Add(GameData.LevelGrid);
+        GameData.Camera = new Camera("camera", new Rectangle(0, 0, GameData.LevelGrid.GetWidth(), GameData.LevelGrid.GetHeight()));
+        GameData.LevelObjects.Add(GameData.Camera);
         cursor = new Cursor();
         GameData.LevelObjects.Add(cursor);
         selectedTile = new SpriteGameObject("Hexagon Selected Tile", 0, "selectedTile", 1);

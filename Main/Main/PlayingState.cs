@@ -7,15 +7,15 @@ using System;
 
 class PlayingState : Root
 {
-    Level level;
+    Player player;
 
     public PlayingState()
     {
         //Later nog veranderen dat Initialize pas gebeurd als er daadwerkelijk een game wordt gemaakt (in titlemenu state)
-        Initialize();
-        level = new Level(Level.Faction.humanity);
+        InitializeGameplay();
+        player = new Player(Player.Faction.humanity);
     }
-    public void Initialize()
+    public void InitializeGameplay()
     {
         GameData.Initialize();
     }
