@@ -23,7 +23,35 @@ public class AssetManager
     }
 
         public ContentManager Content
-        {
-            get { return contentmanager; }
-        }
+    {
+        get { return contentmanager; }
+    }
+    //Returns a font with given assetname.
+    public SpriteFont GetFont(string assetName)
+    {
+        if (assetName == "")
+            return null;
+
+        return contentmanager.Load<SpriteFont>(assetName);
+    }
+    //Plays a sound with given assetname.
+    public void PlaySound(string assetName)
+    {
+        if (assetName == "")
+            return;
+        SoundEffect snd = contentmanager.Load<SoundEffect>(assetName);
+        snd.Play(1,0, 0);
+    }
+    //Plays music with given assetname and repeats.
+    public void PlayMusic(string assetName)
+    {
+        if (assetName == "")
+            return;
+
+        Song song = contentmanager.Load<Song>(assetName);
+        if (song == null) return;
+        MediaPlayer.Stop();
+        MediaPlayer.IsRepeating = true;
+        MediaPlayer.Play(song);
+    }
 }

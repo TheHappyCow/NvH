@@ -73,6 +73,7 @@
     <Compile Include="Root.cs" />
     <Compile Include="SpriteGameObject.cs" />
     <Compile Include="SpriteSheet.cs" />
+    <Compile Include="TextGameObject.cs" />
     <Compile Include="Timer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

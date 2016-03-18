@@ -8,6 +8,13 @@ public class GameObject : Root
     protected Vector2 position;
     protected int layer;
     protected string id;
+    protected bool visible;
+
+    public bool Visible
+    {
+        get { return visible; }
+        set { visible = value; }
+    }
 
     public int Layer
     {
@@ -42,6 +49,7 @@ public class GameObject : Root
         this.velocity = Vector2.Zero;
         this.id = id;
         this.layer = layer;
+        this.visible = true;
     }
 
     public virtual void HandleInput(InputHelper inputHelper)
