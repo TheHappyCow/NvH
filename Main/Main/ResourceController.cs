@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 class ResourceController : GameObject
 {
     Timer passiveResourceTimer;
-
+    protected const int passiveResourceAmount = 1;
     public ResourceController() : base("resourceController")
     {
         passiveResourceTimer = new Timer(1);
@@ -20,14 +20,21 @@ class ResourceController : GameObject
     }
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
     {
+
     }
 
     protected void checkPassiveTimer()
     {
         if (passiveResourceTimer.Ended)
         {
-            //Give players resources
-            //Reset timer
+            for(int i =0; i < GameData.LevelObjects.Objects.Count; i++)
+            {
+                if(GameData.LevelObjects.Objects[i] is Player)
+                {
+                    Player player = GameData.LevelObjects.Objects[i] as Player;
+                    player.MainResource += passiveResourceAmount;
+                }
+            }
             passiveResourceTimer.Reset();
         }
     }
