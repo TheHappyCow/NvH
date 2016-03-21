@@ -17,10 +17,16 @@ class Cursor : SpriteGameObject
 
         Point position = new Point((int)(inputHelper.MousePosition.X + GameData.Camera.Position.X), (int)(inputHelper.MousePosition.Y + GameData.Camera.Position.Y));
 
-        //if (inputHelper.MouseLeftButtonPressed()) {
-            Tile tile = GameData.LevelGrid.GetTile(position);
-            if (tile != null)
-                GameData.selectedTile.Position = tile.Position;
+        Tile tile = GameData.LevelGrid.GetTile(position);
+        if (tile != null)
+            GameData.selectedTile.Position = tile.Position;
+
+        if (tile != null && inputHelper.MouseLeftButtonPressed())
+        {
+            GameData.tileMenu.Objects.Clear();
+            tile.SetMenu(GameData.tileMenu);
+
+        }
         //}
 
     }

@@ -9,5 +9,14 @@ class Tile : SpriteGameObject
     {
 
     }
+
+    public void SetMenu(TileMenu menu)
+    {
+            menu.Add(new TileMenuItem());
+        menu.Add(new TileMenuItem());
+        menu.Add(new TileMenuItem());
+        menu.Add(new TileMenuItem());
+        menu.Add(new TileMenuItem());
+    }
 }
 

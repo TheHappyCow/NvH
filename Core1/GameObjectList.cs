@@ -36,7 +36,7 @@ public class GameObjectList : GameObject
         }
     }
     //Method to add an object to the list.
-    public void Add(GameObject obj)
+    public virtual void Add(GameObject obj)
     {
         obj.Parent = this;
         for (int i = 0; i < gameObjects.Count; i++)
@@ -52,7 +52,7 @@ public class GameObjectList : GameObject
     }
 
     //Method to remove an object from the list.
-    public void Remove(GameObject obj)
+    public virtual void Remove(GameObject obj)
     {
         gameObjects.Remove(obj);
         obj.Parent = null;
@@ -66,7 +66,7 @@ public class GameObjectList : GameObject
         }
     }
     //Method to find a specific object (With the id) in the list.
-    public GameObject Find(string id)
+    public virtual GameObject Find(string id)
     {
         foreach (GameObject obj in gameObjects)
         {

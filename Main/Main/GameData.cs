@@ -13,6 +13,7 @@ static class GameData
     static public GameObjectList LevelObjects;
     static public Cursor cursor;
     static public GameObject selectedTile;
+    static public TileMenu tileMenu;
     static public ResourceController resourceController;
     static public void Update(GameTime gameTime)
     {
@@ -40,6 +41,8 @@ static class GameData
         GameData.LevelObjects.Add(cursor);
         selectedTile = new SpriteGameObject("Hexagon Selected Tile", 0, "selectedTile", 1);
         GameData.LevelObjects.Add(selectedTile);
+        tileMenu = new TileMenu();
+        GameData.LevelObjects.Add(tileMenu);
         resourceController = new ResourceController();
         GameData.LevelObjects.Add(resourceController);
     }

@@ -83,6 +83,8 @@
     <Compile Include="MainGame.cs" />
     <Compile Include="ResourceController.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="TileMenu.cs" />
+    <Compile Include="TileMenuItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core1\Core.csproj">
