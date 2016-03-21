@@ -40,6 +40,7 @@ static class GameData
         GameData.LevelObjects.Add(cursor);
         selectedTile = new SpriteGameObject("Hexagon Selected Tile", 0, "selectedTile", 1);
         GameData.LevelObjects.Add(selectedTile);
+        selectedTile.Position= new Vector2(-3000,-3000);
         resourceController = new ResourceController();
         GameData.LevelObjects.Add(resourceController);
     }
