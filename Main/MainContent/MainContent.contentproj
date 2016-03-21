@@ -68,6 +68,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="placeholdermenu.png">
+      <Name>placeholdermenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="TileMenuItem.png">
       <Name>TileMenuItem</Name>
       <Importer>TextureImporter</Importer>

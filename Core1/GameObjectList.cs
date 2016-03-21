@@ -14,25 +14,25 @@ public class GameObjectList : GameObject
 
     public override void HandleInput(InputHelper inputHelper)
     {
-        foreach (GameObject obj in gameObjects)
+        for(int i = 0; i < gameObjects.Count; i++)
         {
-            obj.HandleInput(inputHelper);
+            gameObjects[i]?.HandleInput(inputHelper);
         }
     }
 
     public override void Update(GameTime gameTime)
     {
-        foreach(GameObject obj in gameObjects)
+        for (int i = 0; i < gameObjects.Count; i++)
         {
-            obj.Update(gameTime);
+            gameObjects[i]?.Update(gameTime);
         }
     }
 
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 cameraPosition)
     {
-        foreach(GameObject obj in gameObjects)
+        for (int i = 0; i < gameObjects.Count; i++)
         {
-            obj.Draw(gameTime, spriteBatch, cameraPosition);
+            gameObjects[i]?.Draw(gameTime, spriteBatch, cameraPosition);
         }
     }
     //Method to add an object to the list.
