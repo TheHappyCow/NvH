@@ -8,7 +8,10 @@ public class Timer : GameObject
     protected bool paused;
     protected bool ended;
 
-    public bool Ended => ended;
+    public bool Ended
+    {
+        get { return ended; }
+    }
 
     public Timer(float timeInSeconds)
     {

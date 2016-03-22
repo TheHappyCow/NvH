@@ -16,7 +16,7 @@ public class GameObjectList : GameObject
     {
         for(int i = 0; i < gameObjects.Count; i++)
         {
-            gameObjects[i]?.HandleInput(inputHelper);
+            gameObjects[i].HandleInput(inputHelper);
         }
     }
 
@@ -24,7 +24,7 @@ public class GameObjectList : GameObject
     {
         for (int i = 0; i < gameObjects.Count; i++)
         {
-            gameObjects[i]?.Update(gameTime);
+            gameObjects[i].Update(gameTime);
         }
     }
 
@@ -32,7 +32,7 @@ public class GameObjectList : GameObject
     {
         for (int i = 0; i < gameObjects.Count; i++)
         {
-            gameObjects[i]?.Draw(gameTime, spriteBatch, cameraPosition);
+            gameObjects[i].Draw(gameTime, spriteBatch, cameraPosition);
         }
     }
     //Method to add an object to the list.
